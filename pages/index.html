@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discussions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Écran 1 : choix du pseudo -->
+  <section class="ecran-connexion" id="ecranConnexion">
+    <form class="formulaire-connexion" id="formConnexion">
+      <h1>Bienvenue</h1>
+      <input class="champ-pseudo" id="champPseudo" placeholder="Ton pseudo" maxlength="20" autocomplete="off" required />
+      <button class="bouton-vert" type="submit">Entrer</button>
+    </form>
+  </section>
+
+  <!-- Écran 2 : l'application -->
+  <div class="appli cache" id="appli">
+    <aside class="panneau-discussions">
+      <header class="entete-panneau">
+        <h1>Discussions</h1>
+        <span class="mon-pseudo" id="monPseudo"></span>
+      </header>
+      <ul class="liste-discussions" id="listeDiscussions"></ul>
+    </aside>
+
+    <section class="zone-conversation">
+      <div class="conversation-vide" id="conversationVide">
+        <p>Choisis une discussion pour commencer</p>
+      </div>
+
+      <div class="conversation cache" id="conversation">
+        <header class="entete-conversation">
+          <button class="bouton-retour" id="boutonRetour" type="button" aria-label="Retour aux discussions">←</button>
+          <div>
+            <h2 id="titreConversation"></h2>
+            <p class="sous-titre" id="sousTitre"></p>
+          </div>
+        </header>
+
+        <ul class="liste-messages" id="listeMessages"></ul>
+        <p class="indicateur-frappe" id="indicateurFrappe"></p>
+
+        <form class="barre-saisie" id="formMessage">
+          <input class="champ-message" id="champMessage" placeholder="Écris un message…" autocomplete="off" maxlength="1000" />
+          <button class="bouton-vert" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="clients.js"></script>
+</body>
+</html>

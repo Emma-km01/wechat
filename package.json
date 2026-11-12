@@ -1,0 +1,14 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "Messagerie temps réel multi-discussions avec Socket.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "bun server.js",
+    "dev": "bun --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "socket.io": "^4.8.0"
+  }
+}
